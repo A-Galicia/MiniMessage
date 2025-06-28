@@ -1,9 +1,31 @@
 const express = require('express');
 const app = express();
+const path = require('node:path');
+const assetsPath = path.join(__dirname, 'public');
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
+const indexRouter = require('./routes/indexRouter');
+
+// Views setup ////////////////////////////////////////////////////
+
+app.use(express.static(assetsPath));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// ________________________________________________________________
+
+// Routes /////////////////////////////////////////////////////////
+
+app.get('/', indexRouter);
+
+// ________________________________________________________________
+
+// Error handeling ////////////////////////////////////////////////
+
+app.get('/{*splat}', (req, res) => {
+  res.send('Error: 404');
 });
+
+// ________________________________________________________________
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

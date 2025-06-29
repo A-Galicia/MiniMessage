@@ -5,13 +5,19 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <p>
+      <a href="/new">Create New Message</a>
+    </p>
     <div>
       <% messages.map((msg) => { %>
+      <p>message ID: <%= msg.id %></p>
       <p>From: <%= msg.user %></p>
       <p>Message: <%= msg.text %></p>
       <p>Posted: <%= msg.added %></p>
+      <button class="msgBtn" id="<% msg.id %>">Open Message</button>
       <hr />
       <% }) %>
     </div>
+    <script src="../app.js" type="text/javascript" defer></script>
   </body>
 </html>

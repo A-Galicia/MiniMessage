@@ -17,6 +17,9 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.get('/new', indexRouter);
 app.post('/new', indexRouter);
+
+app.get('/message', indexRouter);
+
 app.get('/', indexRouter);
 
 // ________________________________________________________________

@@ -31,15 +31,10 @@ indexRouter.post('/new', (req, res) => {
   res.redirect('/');
 });
 
-const button = document.querySelectorAll('.msgBtn');
-button.forEach((msgBtn) => {
-  msgBtn.addEventListener(() => {
-    const openMsg = messages.filter((msg) => msg.id === msgBtn.id);
-
-    indexRouter.get('/message', (req, res) => {
-      res.render('message', { message: openMsg });
-    });
-  });
+indexRouter.get('/message/:id', (req, res) => {
+  const message = messages.find((msg) => msg.id === parseInt(req.params.id));
+  console.log(parseInt(req.params.id));
+  res.render('message', { message: message, id: parseInt(req.params.id) });
 });
 
 indexRouter.get('/', (req, res) => {

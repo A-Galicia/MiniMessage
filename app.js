@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/new', indexRouter);
 app.post('/new', indexRouter);
 
+app.get('/message/:id', indexRouter);
 app.get('/message', indexRouter);
 
 app.get('/', indexRouter);

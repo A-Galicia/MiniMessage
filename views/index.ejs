@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Messageboard</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div>
+      <% messages.map((msg) => { %>
+      <p>From: <%= msg.user %></p>
+      <p>Message: <%= msg.text %></p>
+      <p>Posted: <%= msg.added %></p>
+      <hr />
+      <% }) %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Messageboard</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div>
+      <form action="/new" method="post">
+        <label for="user"
+          >Your name: <input id="user" name="user" type="text" required
+        /></label>
+        <label for="message">Your message:</label>
+        <textarea id="message" name="messages"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

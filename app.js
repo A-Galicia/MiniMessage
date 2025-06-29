@@ -14,7 +14,9 @@ app.set('view engine', 'ejs');
 // ________________________________________________________________
 
 // Routes /////////////////////////////////////////////////////////
-
+app.use(express.urlencoded({ extended: true }));
+app.get('/new', indexRouter);
+app.post('/new', indexRouter);
 app.get('/', indexRouter);
 
 // ________________________________________________________________

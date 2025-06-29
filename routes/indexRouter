@@ -33,7 +33,6 @@ indexRouter.post('/new', (req, res) => {
 
 indexRouter.get('/message/:id', (req, res) => {
   const message = messages.find((msg) => msg.id === parseInt(req.params.id));
-  console.log(parseInt(req.params.id));
   res.render('message', { message: message, id: parseInt(req.params.id) });
 });
 
